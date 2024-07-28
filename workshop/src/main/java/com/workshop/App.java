@@ -13,6 +13,7 @@ import org.json.JSONTokener;
 import com.workshop.model.Client;
 import com.workshop.model.Order;
 import com.workshop.service.ClientService;
+import com.workshop.view.DisplayCollection;
 /**
  * Hello world!
  */
@@ -110,7 +111,16 @@ public final class App {
         Order ord1 = new Order(cl1, true, 1);
 
         System.out.println(ord1);
+        System.out.println();
 
+        System.out.println("===========Generics ===========");
+
+        DisplayCollection<Client>  gener = new DisplayCollection<>();
+        gener.add(cl1);
+        gener.add(new Client("Мавроди", "mavrody@maio.ru", "+232355411524"));
+
+        System.out.print(gener.get(0));
+        System.out.print(gener.get(1));
 
     }
 }
