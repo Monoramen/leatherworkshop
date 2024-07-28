@@ -29,22 +29,25 @@ public final class App {
 
         String fileName = "/clients.json";
         List<Client> clientList = new ReadJsonFile(fileName).readFile();
-        System.out.println("\t -".repeat(5) + " First file");
+        System.out.println();
+        System.out.println("++++".repeat(5) + " First file \n");
 
         for (Client client : clientList) {
             System.out.println(client);
         }
+        System.out.println();
 
         String fileName2 = "/clients2.json";
         List<Client> clientList2 = new ReadJsonFile(fileName2).readFile();
 
-        System.out.println("\t - ".repeat(5) + " Second file");
+        System.out.println("++++".repeat(5) + " Second file \n");
 
         for (Client client : clientList2) {
             System.out.println(client);
         }
+        System.out.println();
 
-
+        System.out.println("++++".repeat(5) + " First + Second Lists  \n");
 
         ClientService clientService = new ClientService(clientList);
         clientService.addAll(clientList2);
