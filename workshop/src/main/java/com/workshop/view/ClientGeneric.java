@@ -6,10 +6,10 @@ import java.util.List;
 import com.workshop.model.Client;
 
 
-public class DisplayCollection<T extends Client> {
+public class ClientGeneric<T extends Client> {
     private  List<T> client;
 
-    public DisplayCollection(){
+    public ClientGeneric(){
         client = new ArrayList<>();
     }
 

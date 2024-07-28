@@ -2,6 +2,7 @@ package com.workshop;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -13,7 +14,8 @@ import org.json.JSONTokener;
 import com.workshop.model.Client;
 import com.workshop.model.Order;
 import com.workshop.service.ClientService;
-import com.workshop.view.DisplayCollection;
+import com.workshop.view.ClientGeneric;
+import com.workshop.view.ClientServiceGeneric;
 /**
  * Hello world!
  */
@@ -25,6 +27,7 @@ public final class App {
      * Says hello to the world.
      * @param args The arguments of the program.
      */
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
 
@@ -115,12 +118,26 @@ public final class App {
 
         System.out.println("===========Generics ===========");
 
-        DisplayCollection<Client>  gener = new DisplayCollection<>();
+        ClientGeneric<Client>  gener = new ClientGeneric<>();
         gener.add(cl1);
         gener.add(new Client("Мавроди", "mavrody@maio.ru", "+232355411524"));
 
-        System.out.print(gener.get(0));
-        System.out.print(gener.get(1));
+        System.out.println(gener.get(0));
+        System.out.println(gener.get(1));
+
+
+        System.out.println("===========Generics 2===========");
+
+
+        ClientServiceGeneric<Client> cliGenList = new ClientServiceGeneric<>(clientList);
+        cliGenList.addAll(clientList2);
+
+
+
+        for (Client client : cliGenList.getLinkedClients()) {
+        System.out.println(client);
+
+        }
 
     }
 }
