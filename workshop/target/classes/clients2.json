@@ -1,0 +1,52 @@
+[
+  {
+      "name": "Ivy Gonzalez",
+      "email": "ivy@example.com",
+      "phone": "+79009990011"
+  },
+  {
+      "name": "Jack Harris",
+      "email": "jack@example.com",
+      "phone": "+79009990012"
+  },
+  {
+      "name": "Kate Miller",
+      "email": "kate@example.com",
+      "phone": "+79009990013"
+  },
+  {
+      "name": "Leo Moore",
+      "email": "leo@example.com",
+      "phone": "+79009990014"
+  },
+  {
+      "name": "Mia Taylor",
+      "email": "mia@example.com",
+      "phone": "+79009990015"
+  },
+  {
+      "name": "Nick Anderson",
+      "email": "nick@example.com",
+      "phone": "+79009990016"
+  },
+  {
+      "name": "Olivia Thomas",
+      "email": "olivia@example.com",
+      "phone": "+79009990017"
+  },
+  {
+      "name": "Paul Clark",
+      "email": "paul@example.com",
+      "phone": "+79009990018"
+  },
+  {
+      "name": "Quinn Scott",
+      "email": "quinn@example.com",
+      "phone": "+79009990019"
+  },
+  {
+      "name": "Rachel Young",
+      "email": "rachel@example.com",
+      "phone": "+79009990020"
+  }
+]

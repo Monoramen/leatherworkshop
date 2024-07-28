@@ -26,39 +26,42 @@ public final class App {
      */
     public static void main(String[] args) {
 
-        String fileName = "/clients.json";
-        InputStream is = App.class.getResourceAsStream(fileName);
 
-        if (is == null) {
-            throw new NullPointerException("Cannot find resources file" + fileName);
+        String fileName = "/clients.json";
+        List<Client> clientList = new ReadJsonFile(fileName).readFile();
+        System.out.println("\t -".repeat(5) + " First file");
+
+        for (Client client : clientList) {
+            System.out.println(client);
         }
 
-        JSONTokener tokener = new JSONTokener(is);
-        JSONArray clients = new JSONArray(tokener);
+        String fileName2 = "/clients2.json";
+        List<Client> clientList2 = new ReadJsonFile(fileName2).readFile();
 
-        List<Client> clientList = new ArrayList<>();
+        System.out.println("\t - ".repeat(5) + " Second file");
 
-        for (int i = 0; i < clients.length(); i++) {
-            JSONObject client = clients.getJSONObject(i);
-            System.out.println("Name: " + client.getString("name"));
-            System.out.println("Email: " + client.getString("email"));
-            System.out.println("Phone: " + client.getString("phone"));
+        for (Client client : clientList2) {
+            System.out.println(client);
+        }
 
-            Client cl1 = new Client(  client.getString("name"), client.getString("email"), client.getString("phone"));
-            clientList.add(cl1);
-            System.out.println();
+
+
+        ClientService clientService = new ClientService(clientList);
+        clientService.addAll(clientList2);
+
+
+        for (Client client : clientService.getLinkedClients()) {
+            System.out.println(client);
         }
         System.out.println("===========LIST===========");
-        //clientList.remove(0);
-        //clientList.remove(2);
-        clientList.set(0, new Client("fileName", "fileName", "fileName"));
+
 
         for (Client client : clientList) {
             System.out.println(client);
         }
 
 
-        ClientService clientService = new ClientService(clientList);
+
 
         System.out.println("===========Last index of===========");
         clientList.remove(4);

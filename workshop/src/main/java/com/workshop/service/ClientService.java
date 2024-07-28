@@ -41,12 +41,13 @@ public class ClientService {
     }
 
 
+
     public LinkedList<Client> getLinkedClients(){
         return linkedClients;
     }
 
-    public Long getNextId() {
-        return nextId;
+    public void addAll(List<Client> clientList2){
+        linkedClients.addAll(clientList2);
     }
 
 }
